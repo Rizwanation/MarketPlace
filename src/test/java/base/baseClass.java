@@ -20,7 +20,7 @@ public class baseClass {
 
         if(browser.equals("chrome"))
         {
-            System.setProperty("webdriver.chrome.driver", "//Users//zeeshanyousaf//GitRepoforAutomation//E2E-Project//Browsers//chromedriver");
+            System.setProperty("webdriver.chrome.driver", "//Users//zeeshanyousaf//GitRepoforAutomation//MarketPlace//Browsers//chromedriver");
             driver = new ChromeDriver();
 
         }
