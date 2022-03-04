@@ -1,10 +1,18 @@
 package base;
 
 import Utilities.readConfig;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+
+import java.io.File;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class baseClass {
 
@@ -18,7 +26,6 @@ public class baseClass {
             System.setProperty("webdriver.chrome.driver", ".//Browsers//chromedriver");
             driver = new ChromeDriver();
         }
-
     }
 
     @AfterClass
@@ -26,4 +33,24 @@ public class baseClass {
         driver.quit();
     }
 
+    public static String getTime() {
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        return dtf.format(now);
+    }
+
+
+    public static void GetScreenShot(String tname)
+    {
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File src = ts.getScreenshotAs(OutputType.FILE);
+        File dst = new File(".//Screenshots//" + tname+ getTime() + ".png");
+
+        try {
+            FileUtils.copyFile(src,dst);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
