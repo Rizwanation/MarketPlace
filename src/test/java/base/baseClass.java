@@ -22,7 +22,8 @@ public class baseClass {
     }
 
     @AfterClass
-    public void tearDown(){
+    public void tearDown()
+    {
         driver.quit();
     }
 
