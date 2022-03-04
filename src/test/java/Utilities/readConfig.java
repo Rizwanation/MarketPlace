@@ -13,7 +13,7 @@ public class readConfig {
      // File src=new File(System.getProperty(System.getProperty("user.dir")+"//Configurations//config.properties"));
 
        try {
-           FileInputStream fis = new FileInputStream("./Configurations/config.properties");
+           FileInputStream fis = new FileInputStream("/Users/config.properties");
            prop = new Properties();
            prop.load(fis);
        }
@@ -28,5 +28,35 @@ public class readConfig {
         String browser=prop.getProperty("browser");
         return browser;
     }
+
+    public String getTmUserName()
+    {
+        String tmUserName = prop.getProperty("tmusername");
+        return tmUserName;
+
+    }
+
+    public String gettmpassword()
+    {
+        String tmpassword = prop.getProperty("tmpassword");
+        return tmpassword;
+
+    }
+
+    public String getPdmusername()
+    {
+        String pdmusername = prop.getProperty("pdmusername");
+        return pdmusername;
+
+    }
+
+
+    public String getPdmpassword()
+    {
+        String pdmpassword = prop.getProperty("pdmpassword");
+        return pdmpassword;
+
+    }
+
 
 }

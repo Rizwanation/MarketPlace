@@ -6,8 +6,8 @@
     </listeners>
     <test verbose="2" preserve-order="true" name="/Users/muhammadrizwan/MarketPlace">
         
-        <classes><class name="TestCases.test">
-            <methods><include name="visitURL"/></methods>
-        </class></classes>
+        <classes>
+            <class name="TestCases.UI_TC_001_HomePage"></class>
+        </classes>
     </test>
 </suite>
