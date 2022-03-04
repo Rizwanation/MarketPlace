@@ -9,30 +9,20 @@ import org.testng.annotations.BeforeClass;
 public class baseClass {
 
     public static WebDriver driver;
-     readConfig rc;
-    public String browser;
+    public readConfig rc = new readConfig();
+    public String browser = rc.getBrowserName();
 
     @BeforeClass
-    public void initializeBrowser()
-    {
-        rc = new readConfig();
-        browser = rc.getBrowserName();
-
-        if(browser.equals("chrome"))
-        {
-            System.setProperty("webdriver.chrome.driver", "//Users//zeeshanyousaf//GitRepoforAutomation//MarketPlace//Browsers//chromedriver");
+    public void initializeBrowser() {
+        if (browser.equals("chrome")) {
+            System.setProperty("webdriver.chrome.driver", ".//Browsers//chromedriver");
             driver = new ChromeDriver();
-
         }
-
-        //System.setProperty("webdriver.chrome.driver", "//Users//zeeshanyousaf//GitRepoforAutomation//E2E-Project//Browsers//chromedriver");
-       // driver = new ChromeDriver();
 
     }
 
     @AfterClass
-    public void tearDown()
-    {
+    public void tearDown(){
         driver.quit();
     }
 
