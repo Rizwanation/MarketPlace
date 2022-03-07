@@ -39,6 +39,7 @@ public class baseClass {
         if (browser.equals("chrome")) {
             System.setProperty("webdriver.chrome.driver", ".//Browsers//chromedriver");
 
+
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments(
                     "--disable-web-security",
@@ -47,6 +48,7 @@ public class baseClass {
                     "--allow-insecure-localhost"
             );
             driver = new ChromeDriver(chromeOptions);
+
         }
     }
 
