@@ -56,7 +56,7 @@ public class baseClass {
     public void startReport()
     {
         extent = new ExtentReports();
-        spark = new ExtentSparkReporter(".//spark.html");
+        spark = new ExtentSparkReporter(".//ExtentReports//" + getTime() + ".html");
         extent.attachReporter(spark);
     }
 
